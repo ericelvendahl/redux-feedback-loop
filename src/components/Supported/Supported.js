@@ -59,7 +59,7 @@ class Supported extends Component {
         <div className={classes.root}>
           <FormControl component="fieldset" className={classes.formControl}>
             <FormLabel component="legend">
-              On a scale of 1 to 5, rate your feeling for today
+              On a scale of 1 to 5, rate how supported you felt today
             </FormLabel>
             <RadioGroup
               aria-label="Supported"

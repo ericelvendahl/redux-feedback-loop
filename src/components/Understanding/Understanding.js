@@ -59,7 +59,7 @@ class Understanding extends Component {
         <div className={classes.root}>
           <FormControl component="fieldset" className={classes.formControl}>
             <FormLabel component="legend">
-              On a scale of 1 to 5, rate your feeling for today
+              On a scale of 1 to 5, rate your level of understanding for today
             </FormLabel>
             <RadioGroup
               aria-label="Understanding"
