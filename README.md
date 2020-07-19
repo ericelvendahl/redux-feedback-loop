@@ -1,9 +1,15 @@
-# Project Name
-
-[Project Instructions](./INSTRUCTIONS.md), this line may be removed once you have updated the README.md
+# React Feedback Loop
 
 ## Description
 
-Your project description goes here. What problem did you solve? How did you solve it?
+Project provides a form for user to enter feedback regarding the day's activities.
 
-Additional README details can be found [here](https://github.com/PrimeAcademy/readme-template/blob/master/README.md).
+## Technology used
+
+Node
+React
+Redux
+Material-UI
+Axios
+Postgres
+Express
