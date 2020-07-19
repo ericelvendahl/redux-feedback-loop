@@ -26,7 +26,6 @@ const styles = (theme) => ({
 });
 
 class ThankYou extends Component {
-
   classes = this.props.classes;
 
   nextClicked = () => {
@@ -46,34 +45,43 @@ class ThankYou extends Component {
   render() {
     return (
       <>
-        <h3>Thank you! Click finish to submit and return to the beginning</h3>
+        <h3>Thank you!</h3>
+        <h3>Click finish to submit and return to the beginning
+        or use your browser's back button to edit your responses</h3>
         <div className="buttonClass">
-        <Paper className={this.props.classes.root}>
-          <Table className={this.props.classes.table}>
-            <TableHead>
-              <TableRow>
-                <TableCell>Feedback</TableCell>
-                <TableCell align="right">Feeling</TableCell>
-                <TableCell align="right">Understanding</TableCell>
-                <TableCell align="right">Supported</TableCell>
-                <TableCell align="right">Comments</TableCell>
-              </TableRow>
-            </TableHead>
-            <TableBody>
-              
+          <Paper className={this.props.classes.root}>
+            <Table className={this.props.classes.table}>
+              <TableHead>
+                <TableRow>
+                  <TableCell>Feedback</TableCell>
+                  <TableCell align="right">Feeling</TableCell>
+                  <TableCell align="right">Understanding</TableCell>
+                  <TableCell align="right">Supported</TableCell>
+                  <TableCell align="right">Comments</TableCell>
+                </TableRow>
+              </TableHead>
+              <TableBody>
                 <TableRow key={this.props.reduxState.thisFeedback.id}>
                   <TableCell component="th" scope="row">
                     {this.props.reduxState.thisFeedback.name}
                   </TableCell>
-                  <TableCell align="right">{this.props.reduxState.thisFeedback.feeling}</TableCell>
-                  <TableCell align="right">{this.props.reduxState.thisFeedback.understanding}</TableCell>
-                  <TableCell align="right">{this.props.reduxState.thisFeedback.supported}</TableCell>
-                  <TableCell align="right">{this.props.reduxState.thisFeedback.comments}</TableCell>
+                  <TableCell align="right">
+                    {this.props.reduxState.thisFeedback.feeling}
+                  </TableCell>
+                  <TableCell align="right">
+                    {this.props.reduxState.thisFeedback.understanding}
+                  </TableCell>
+                  <TableCell align="right">
+                    {this.props.reduxState.thisFeedback.supported}
+                  </TableCell>
+                  <TableCell align="right">
+                    {this.props.reduxState.thisFeedback.comments}
+                  </TableCell>
                 </TableRow>
-             
-            </TableBody>
-          </Table>
-        </Paper> 
+              </TableBody>
+            </Table>
+          </Paper>
+          <br />
           <button onClick={this.nextClicked}>Finish</button>
         </div>
       </>

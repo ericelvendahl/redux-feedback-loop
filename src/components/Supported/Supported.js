@@ -56,7 +56,7 @@ class Supported extends Component {
     const { classes } = this.props;
     return (
       <>
-        <h2>This the Supported component.</h2>
+        <h3>How supported did you feel?</h3>
         <div className={classes.root}>
           <FormControl component="fieldset" className={classes.formControl}>
             <FormLabel component="legend">

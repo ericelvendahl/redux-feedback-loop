@@ -56,7 +56,7 @@ class Understanding extends Component {
     const { classes } = this.props;
     return (
       <>
-        <h2>This the Understanding component.</h2>
+        <h3>What was your level of understanding today?</h3>
         <div className={classes.root}>
           <FormControl component="fieldset" className={classes.formControl}>
             <FormLabel component="legend">
