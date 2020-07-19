@@ -36,6 +36,7 @@ class App extends Component {
         <br />
         Add stepper here ( https://v3.material-ui.com/demos/steppers/ )
         {/* <Supported /> */}
+        Redux state thing: {this.props.reduxState.thisFeedback.feeling}
         <Router>
           <Route path="/" component={Feeling} exact />
           <Route path="/understanding" component={Understanding} />

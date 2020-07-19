@@ -9,10 +9,16 @@ import { createStore, combineReducers, applyMiddleware } from "redux";
 import { Provider } from "react-redux";
 import logger from "redux-logger";
 
-const thisFeedback = (state = [], action) => {
+
+
+const thisFeedback = (state = {}, action) => {
   console.log(`in thisFeedback reducer`);
   if (action.type === "LOG_A_SMILEY") {
     console.log(`:-)`);
+  }
+  if (action.type === "UPDATE_FEELING"){
+    return {feeling: action.payload}
+    //state.feedback.feeling = action.payload;
   }
   return state;
 };

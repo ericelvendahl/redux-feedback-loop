@@ -1,5 +1,6 @@
 import React, { Component } from "react";
 import axios from "axios";
+import { connect } from "react-redux";
 
 // imports for material-ui number Select
 import PropTypes from "prop-types";
@@ -34,11 +35,15 @@ class Feeling extends Component {
   };
 
   handleChange = (event) => {
-    console.log('handleChange called. event.target.value is ', event.target.value);
-    console.log('state is', this.state)
+    console.log(
+      "handleChange called. event.target.value is ",
+      event.target.value
+    );
+    console.log("state is", this.state);
     this.setState({
       feelingValue: event.target.value,
     });
+    this.props.dispatch({ type: "UPDATE_FEELING", payload: event.target.value });
   };
 
   render() {
@@ -89,4 +94,11 @@ Feeling.propTypes = {
   classes: PropTypes.object.isRequired,
 };
 
-export default withStyles(styles)(Feeling);
+const putReduxStateOnProps = (reduxState) => ({
+  reduxState,
+});
+
+// create a connected copy of component
+const ConnectedFeeling = connect(putReduxStateOnProps)(Feeling);
+// attach styles to connected version
+export default withStyles(styles)(ConnectedFeeling);
