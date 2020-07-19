@@ -79,11 +79,11 @@ class Admin extends Component {
           <Table className={this.props.classes.table}>
             <TableHead>
               <TableRow>
-                <TableCell>Dessert (100g serving)</TableCell>
-                <TableCell align="right">Calories</TableCell>
-                <TableCell align="right">Fat (g)</TableCell>
-                <TableCell align="right">Carbs (g)</TableCell>
-                <TableCell align="right">Protein (g)</TableCell>
+                <TableCell>Feedback</TableCell>
+                <TableCell align="right">Feeling</TableCell>
+                <TableCell align="right">Understanding</TableCell>
+                <TableCell align="right">Support</TableCell>
+                <TableCell align="right">Comments</TableCell>
               </TableRow>
             </TableHead>
             <TableBody>
@@ -94,7 +94,7 @@ class Admin extends Component {
                   </TableCell>
                   <TableCell align="right">{row.feeling}</TableCell>
                   <TableCell align="right">{row.understanding}</TableCell>
-                  <TableCell align="right">{row.supported}</TableCell>
+                  <TableCell align="right">{row.support}</TableCell>
                   <TableCell align="right">{row.comments}</TableCell>
                 </TableRow>
               ))}
@@ -102,8 +102,8 @@ class Admin extends Component {
           </Table>
         </Paper> 
 
-        {JSON.stringify(this.state.allFeedback.response.data)}
-        {this.state.allFeedback.response.data.map((x) => x.comments)}
+        {/* {JSON.stringify(this.state.allFeedback.response.data)} */}
+        {/* {this.state.allFeedback.response.data.map((x) => x.comments)} */}
         <div className="buttonClass">
           <button onClick={this.nextClicked}>Next</button>
         </div>

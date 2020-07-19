@@ -49,7 +49,7 @@ class Comments extends Component {
   state = {
     name: "Cat in the Hat",
     age: "",
-    multiline: "Controlled",
+    multiline: "Enter Comments Here:",
     currency: "EUR",
   };
 
@@ -82,7 +82,7 @@ class Comments extends Component {
           <form className={classes.container} noValidate autoComplete="off">
             <TextField
               id="standard-multiline-flexible"
-              label="Multiline"
+              label="Comments"
               multiline
               rowsMax="4"
               value={this.state.multiline}

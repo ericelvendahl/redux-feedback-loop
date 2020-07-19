@@ -29,7 +29,11 @@ class Understanding extends Component {
   };
   nextClicked = () => {
     console.log(`button clicked`);
-    this.props.history.push("/supported");
+    if (this.state.understandingValue !== 123) {
+      this.props.history.push("/supported");
+    } else {
+      alert("Please select a value for your understanding level");
+    }
   };
 
   handleChange = (event) => {

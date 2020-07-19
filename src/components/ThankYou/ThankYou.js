@@ -14,6 +14,7 @@ class ThankYou extends Component {
         console.log("Error in post. Error is", err);
       });
     this.props.history.push("/");
+    this.props.dispatch({type: "CLEAR_THIS_FEEDBACK"});
   };
 
   render() {
@@ -21,7 +22,7 @@ class ThankYou extends Component {
       <>
         <h3>Thank you!</h3>
         <div className="buttonClass">
-          <button onClick={this.nextClicked}>Next</button>
+          <button onClick={this.nextClicked}>Start over</button>
         </div>
       </>
     );

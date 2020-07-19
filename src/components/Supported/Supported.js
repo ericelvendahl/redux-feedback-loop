@@ -25,11 +25,15 @@ const styles = (theme) => ({
 
 class Supported extends Component {
   state = {
-    SupportedValue: 123,
+    supportedValue: 0,
   };
   nextClicked = () => {
     console.log(`button clicked`);
-    this.props.history.push("/comments");
+    if (this.state.supportedValue !== 0) {
+      this.props.history.push("/comments");
+    } else {
+      alert("Please select a value for how supported you feel");
+    }
   };
 
   handleChange = (event) => {
@@ -39,7 +43,7 @@ class Supported extends Component {
     );
     console.log("state is", this.state);
     this.setState({
-      SupportedValue: event.target.value,
+      supportedValue: event.target.value,
     });
     this.props.dispatch({
       type: "UPDATE_SUPPORTED",
@@ -61,7 +65,7 @@ class Supported extends Component {
               aria-label="Supported"
               name="Supported1"
               className={classes.group}
-              value={this.state.SupportedValue}
+              value={this.state.supportedValue}
               onChange={this.handleChange}
             >
               <FormControlLabel
@@ -80,7 +84,7 @@ class Supported extends Component {
             </RadioGroup>
           </FormControl>
         </div>
-        this.state.SupportedValue is {this.state.SupportedValue}
+        this.state.supportedValue is {this.state.supportedValue}
         <div className="buttonClass">
           <button onClick={this.nextClicked}>Next</button>
         </div>

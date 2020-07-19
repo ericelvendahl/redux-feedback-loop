@@ -26,6 +26,9 @@ const thisFeedback = (state = {}, action) => {
   if (action.type === "UPDATE_COMMENTS") {
     return { ...state, comments: action.payload };
   }
+  if (action.type === "CLEAR_THIS_FEEDBACK"){
+      return {};
+  }
   return state;
 };
 

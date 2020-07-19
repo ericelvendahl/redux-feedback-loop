@@ -25,12 +25,16 @@ const styles = (theme) => ({
 
 class Feeling extends Component {
   state = {
-    feelingValue: 123,
+    feelingValue: 0,
   };
 
   nextClicked = () => {
     console.log(`button clicked`);
-    this.props.history.push("/understanding");
+    if (this.state.feelingValue !== 0) {
+      this.props.history.push("/understanding");
+    } else {
+      alert("Please select a value for your feeling");
+    }
   };
 
   handleChange = (event) => {
@@ -42,7 +46,10 @@ class Feeling extends Component {
     this.setState({
       feelingValue: event.target.value,
     });
-    this.props.dispatch({ type: "UPDATE_FEELING", payload: event.target.value });
+    this.props.dispatch({
+      type: "UPDATE_FEELING",
+      payload: event.target.value,
+    });
   };
 
   render() {
