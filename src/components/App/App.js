@@ -1,5 +1,4 @@
 import React, { Component } from "react";
-import axios from "axios";
 import "./App.css";
 import { HashRouter as Router, Route } from "react-router-dom";
 import Feeling from "../Feeling/Feeling";
@@ -22,10 +21,10 @@ class App extends Component {
           </h4>
         </header>
         <br />
-        Add stepper here ( https://v3.material-ui.com/demos/steppers/ )
-        {/* <Supported /> */}
-        this.props.reduxState.thisFeedback:{" "}
-        {JSON.stringify(this.props.reduxState.thisFeedback)}
+        {/* Add stepper here ( https://v3.material-ui.com/demos/steppers/ ) */}
+        {/* for debugging:
+        this.props.reduxState.thisFeedback:
+        {JSON.stringify(this.props.reduxState.thisFeedback)} */}
         <Router>
           <Route path="/" component={Feeling} exact />
           <Route path="/understanding" component={Understanding} />

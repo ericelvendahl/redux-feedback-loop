@@ -17,6 +17,8 @@ const styles = (theme) => ({
     width: "100%",
     marginTop: theme.spacing.unit * 3,
     overflowX: "auto",
+    alignItems: "center",
+    justifyContent: "center",
   },
   table: {
     minWidth: 700,
@@ -44,7 +46,7 @@ class ThankYou extends Component {
   render() {
     return (
       <>
-        <h3>Thank you!</h3>
+        <h3>Thank you! Click finish to submit and return to the beginning</h3>
         <div className="buttonClass">
         <Paper className={this.props.classes.root}>
           <Table className={this.props.classes.table}>

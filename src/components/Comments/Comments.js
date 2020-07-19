@@ -3,15 +3,15 @@ import { connect } from "react-redux";
 
 // imports for material-ui number Select
 import PropTypes from "prop-types";
-import classNames from "classnames";
 import { withStyles } from "@material-ui/core/styles";
-import MenuItem from "@material-ui/core/MenuItem";
 import TextField from "@material-ui/core/TextField";
 
 const styles = (theme) => ({
   container: {
     display: "flex",
     flexWrap: "wrap",
+    alignItems: "center",
+    justifyContent: "center",
   },
   textField: {
     marginLeft: theme.spacing.unit,
@@ -26,31 +26,9 @@ const styles = (theme) => ({
   },
 });
 
-const currencies = [
-  {
-    value: "USD",
-    label: "$",
-  },
-  {
-    value: "EUR",
-    label: "€",
-  },
-  {
-    value: "BTC",
-    label: "฿",
-  },
-  {
-    value: "JPY",
-    label: "¥",
-  },
-];
-
 class Comments extends Component {
   state = {
-    name: "Cat in the Hat",
-    age: "",
-    multiline: "Enter Comments Here:",
-    currency: "EUR",
+    multiline: "",
   };
 
   nextClicked = () => {
@@ -77,22 +55,24 @@ class Comments extends Component {
     const { classes } = this.props;
     return (
       <>
-        <h2>This the Comments component.</h2>
+        <h3>Do you have any additional comments?</h3>
         <div className={classes.root}>
           <form className={classes.container} noValidate autoComplete="off">
             <TextField
               id="standard-multiline-flexible"
-              label="Comments"
+              label="Enter comments here:"
               multiline
               rowsMax="4"
               value={this.state.multiline}
               onChange={this.handleChange("multiline")}
               className={classes.textField}
               margin="normal"
+              
             />
           </form>
         </div>
-        this.state.CommentsValue is {this.state.CommentsValue}
+        {/* for debugging:
+        this.state.CommentsValue is {this.state.CommentsValue} */}
         <div className="buttonClass">
           <button onClick={this.nextClicked}>Next</button>
         </div>

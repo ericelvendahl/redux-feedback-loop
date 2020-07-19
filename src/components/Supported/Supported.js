@@ -6,7 +6,6 @@ import PropTypes from "prop-types";
 import { withStyles } from "@material-ui/core/styles";
 import Radio from "@material-ui/core/Radio";
 import RadioGroup from "@material-ui/core/RadioGroup";
-import FormHelperText from "@material-ui/core/FormHelperText";
 import FormControlLabel from "@material-ui/core/FormControlLabel";
 import FormControl from "@material-ui/core/FormControl";
 import FormLabel from "@material-ui/core/FormLabel";
@@ -14,6 +13,8 @@ import FormLabel from "@material-ui/core/FormLabel";
 const styles = (theme) => ({
   root: {
     display: "flex",
+    alignItems: "center",
+    justifyContent: "center",
   },
   formControl: {
     margin: theme.spacing.unit * 3,
@@ -71,7 +72,7 @@ class Supported extends Component {
               <FormControlLabel
                 value="1"
                 control={<Radio />}
-                label="1 - very bad"
+                label="1 - not supported"
               />
               <FormControlLabel value="2" control={<Radio />} label="2" />
               <FormControlLabel value="3" control={<Radio />} label="3" />
@@ -79,12 +80,15 @@ class Supported extends Component {
               <FormControlLabel
                 value="5"
                 control={<Radio />}
-                label="5 - very good"
+                label="5 - very supported"
               />
             </RadioGroup>
           </FormControl>
         </div>
+
+        {/* for debugging:
         this.state.supportedValue is {this.state.supportedValue}
+         */}
         <div className="buttonClass">
           <button onClick={this.nextClicked}>Next</button>
         </div>
