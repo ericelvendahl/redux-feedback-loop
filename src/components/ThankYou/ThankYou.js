@@ -1,23 +1,22 @@
 import React, { Component } from "react";
 import axios from "axios";
 
-class Understanding extends Component {
-  
+class ThankYou extends Component {
   nextClicked = () => {
     console.log(`button clicked`);
-    this.props.history.push("/supported")
+    this.props.history.push("/")
   };
 
   render() {
     return (
       <>
-        <h2>This the Understanding component.</h2>
+        <h3>Thank you!</h3>
         <div className="buttonClass">
           <button onClick={this.nextClicked}>Next</button>
         </div>
+
       </>
     );
   }
 }
-
-export default Understanding;
+export default ThankYou;

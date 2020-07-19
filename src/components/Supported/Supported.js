@@ -5,7 +5,7 @@ import { HashRouter as Router, Route, Link } from "react-router-dom";
 class Supported extends Component {
   nextClicked = () => {
     console.log(`button clicked`);
-    this.props.history.push("/understanding")
+    this.props.history.push("/comments")
   };
 
   render() {

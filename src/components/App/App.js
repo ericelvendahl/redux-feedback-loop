@@ -4,6 +4,9 @@ import "./App.css";
 import Supported from "../Supported/Supported";
 import Understanding from "../Understanding/Understanding";
 import { HashRouter as Router, Route, Link } from "react-router-dom";
+import Feeling from "../Feeling/Feeling";
+import Comments from "../Comments/Comments";
+import ThankYou from "../ThankYou/ThankYou";
 
 class App extends Component {
   render() {
@@ -18,8 +21,11 @@ class App extends Component {
         <br />
         {/* <Supported /> */}
         <Router>
-          <Route path="/" component={Supported} exact />
+          <Route path="/" component={Feeling} exact />
           <Route path="/understanding" component={Understanding} />
+          <Route path="/supported" component={Supported} />
+          <Route path="/comments" component={Comments} />
+          <Route path="/thankyou" component={ThankYou} />
         </Router>
       </div>
     );
