@@ -9,6 +9,9 @@ import Comments from "../Comments/Comments";
 import ThankYou from "../ThankYou/ThankYou";
 
 class App extends Component {
+  componentDidMount(){
+    axios.get()
+  }
   render() {
     return (
       <div className="App">
