@@ -1,6 +1,9 @@
-import React, { Component } from 'react';
-import axios from 'axios';
-import './App.css';
+import React, { Component } from "react";
+import axios from "axios";
+import "./App.css";
+import Supported from "../Supported/Supported";
+import Understanding from "../Understanding/Understanding";
+import { HashRouter as Router, Route, Link } from "react-router-dom";
 
 class App extends Component {
   render() {
@@ -8,9 +11,16 @@ class App extends Component {
       <div className="App">
         <header className="App-header">
           <h1 className="App-title">Feedback!</h1>
-          <h4><i>Don't forget it!</i></h4>
+          <h4>
+            <i>Don't forget it!</i>
+          </h4>
         </header>
-        <br/>
+        <br />
+        {/* <Supported /> */}
+        <Router>
+          <Route path="/" component={Supported} exact />
+          <Route path="/understanding" component={Understanding} />
+        </Router>
       </div>
     );
   }
