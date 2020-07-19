@@ -1,5 +1,4 @@
 import React, { Component } from "react";
-import axios from "axios";
 import { connect } from "react-redux";
 
 // imports for material-ui number Select
@@ -30,7 +29,7 @@ class Understanding extends Component {
   };
   nextClicked = () => {
     console.log(`button clicked`);
-    this.props.history.push("/supported")
+    this.props.history.push("/supported");
   };
 
   handleChange = (event) => {
@@ -42,7 +41,10 @@ class Understanding extends Component {
     this.setState({
       understandingValue: event.target.value,
     });
-    this.props.dispatch({ type: "UPDATE_UNDERSTANDING", payload: event.target.value });
+    this.props.dispatch({
+      type: "UPDATE_UNDERSTANDING",
+      payload: event.target.value,
+    });
   };
 
   render() {
@@ -56,10 +58,10 @@ class Understanding extends Component {
               On a scale of 1 to 5, rate your feeling for today
             </FormLabel>
             <RadioGroup
-              aria-label="Gender"
+              aria-label="Understanding"
               name="understanding1"
               className={classes.group}
-              value={this.state.feelingValue}
+              value={this.state.understandingValue}
               onChange={this.handleChange}
             >
               <FormControlLabel
@@ -78,8 +80,7 @@ class Understanding extends Component {
             </RadioGroup>
           </FormControl>
         </div>
-        this.state.feelingValue is {this.state.understandingValue}
-
+        this.state.understandingValue is {this.state.understandingValue}
         <div className="buttonClass">
           <button onClick={this.nextClicked}>Next</button>
         </div>

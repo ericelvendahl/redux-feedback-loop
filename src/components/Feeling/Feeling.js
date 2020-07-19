@@ -1,5 +1,4 @@
 import React, { Component } from "react";
-import axios from "axios";
 import { connect } from "react-redux";
 
 // imports for material-ui number Select
@@ -57,7 +56,7 @@ class Feeling extends Component {
               On a scale of 1 to 5, rate your feeling for today
             </FormLabel>
             <RadioGroup
-              aria-label="Gender"
+              aria-label="Feeling"
               name="feeling1"
               className={classes.group}
               value={this.state.feelingValue}
@@ -87,8 +86,6 @@ class Feeling extends Component {
     );
   }
 }
-// original export:
-//export default Feeling;
 
 Feeling.propTypes = {
   classes: PropTypes.object.isRequired,

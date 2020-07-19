@@ -9,16 +9,22 @@ import { createStore, combineReducers, applyMiddleware } from "redux";
 import { Provider } from "react-redux";
 import logger from "redux-logger";
 
-
-
 const thisFeedback = (state = {}, action) => {
   console.log(`in thisFeedback reducer`);
   if (action.type === "LOG_A_SMILEY") {
     console.log(`:-)`);
   }
-  if (action.type === "UPDATE_FEELING"){
-    return {feeling: action.payload}
-    //state.feedback.feeling = action.payload;
+  if (action.type === "UPDATE_FEELING") {
+    return { ...state, feeling: action.payload };
+  }
+  if (action.type === "UPDATE_UNDERSTANDING") {
+    return { ...state, understanding: action.payload };
+  }
+  if (action.type === "UPDATE_SUPPORTED") {
+    return { ...state, supported: action.payload };
+  }
+  if (action.type === "UPDATE_COMMENTS") {
+    return { ...state, comments: action.payload };
   }
   return state;
 };

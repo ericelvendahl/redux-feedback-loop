@@ -19,4 +19,12 @@ router.get("/", (req, res) => {
     });
 });
 
+router.post("/", (req, res) => {
+  console.log("in server POST for /feedback");
+  console.log("req.body is", req.body);
+  let queryString = `INSERT INTO "feedback" ("feeling", "understanding", "support", "comments")
+    VALUES ($1, $2, $3, $4)`;
+  pool.query(queryString, [req.body.feeling, req.body.understanding, req.body.supported, req.body.comments]);
+});
+
 module.exports = router;

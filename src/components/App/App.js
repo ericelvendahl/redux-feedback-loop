@@ -1,29 +1,17 @@
 import React, { Component } from "react";
 import axios from "axios";
 import "./App.css";
-import { HashRouter as Router, Route, Link } from "react-router-dom";
+import { HashRouter as Router, Route } from "react-router-dom";
 import Feeling from "../Feeling/Feeling";
 import Understanding from "../Understanding/Understanding";
 import Supported from "../Supported/Supported";
 import Comments from "../Comments/Comments";
 import ThankYou from "../ThankYou/ThankYou";
+import Admin from "../Admin/Admin";
 import { connect } from "react-redux";
 
 class App extends Component {
-  componentDidMount() {
-    axios
-      .get("/feedback")
-      .then((response) => {
-        console.log(
-          "in App. GET call to /feedback worked. Back with: ",
-          response
-        );
-        this.props.dispatch({type: "LOG_A_SMILEY"});
-      })
-      .catch((err) => {
-        console.log("Error in /feedback GET. Error is", err);
-      });
-  }
+
   render() {
     return (
       <div className="App">
@@ -36,13 +24,15 @@ class App extends Component {
         <br />
         Add stepper here ( https://v3.material-ui.com/demos/steppers/ )
         {/* <Supported /> */}
-        Redux state thing: {this.props.reduxState.thisFeedback.feeling}
+        this.props.reduxState.thisFeedback:{" "}
+        {JSON.stringify(this.props.reduxState.thisFeedback)}
         <Router>
           <Route path="/" component={Feeling} exact />
           <Route path="/understanding" component={Understanding} />
           <Route path="/supported" component={Supported} />
           <Route path="/comments" component={Comments} />
           <Route path="/thankyou" component={ThankYou} />
+          <Route path="/admin" component={Admin} />
         </Router>
       </div>
     );
