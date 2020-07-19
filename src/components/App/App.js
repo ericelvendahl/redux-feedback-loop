@@ -34,6 +34,7 @@ class App extends Component {
           </h4>
         </header>
         <br />
+        Add stepper here ( https://v3.material-ui.com/demos/steppers/ )
         {/* <Supported /> */}
         <Router>
           <Route path="/" component={Feeling} exact />
