@@ -13,3 +13,7 @@ Material-UI
 Axios
 Postgres
 Express
+
+## Heroku-deployed version
+
+https://damp-island-43331.herokuapp.com/#/
