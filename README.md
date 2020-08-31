@@ -14,10 +14,14 @@ This project is a user feedback submission form. It uses redux to handle state a
 
 ## Installation
 
-Set-up 'prime_feedback' database using included database.sql file for reference
+Set-up 'prime_feedback' database using included database.sql file for reference.
+
 Run the following commands in separate terminals:
+
 npm install
+
 npm run client
+
 npm run server
 
 ## Usage
