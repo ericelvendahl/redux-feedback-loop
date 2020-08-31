@@ -1,7 +1,8 @@
 ## Description
 
-This project is a user feedback submission form.
-Duration: weekend project
+This project is a user feedback submission form. It uses redux to handle state across components.
+
+## Duration: weekend project
 
 ## Screen Shots
 
@@ -28,13 +29,13 @@ Use the 'Thank You' page to begin a new entry, if desired.
 
 ## Technologies Used
 
-React
-Redux
-Axios
-Node
-Express
-PostgreSQL/Postico
-Material-UI
+- React
+- Redux
+- Axios
+- Node
+- Express
+- PostgreSQL/Postico
+- Material-UI
 
 ## Acknowledgements
 
